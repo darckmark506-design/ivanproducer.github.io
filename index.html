@@ -3,10 +3,12 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#050816">
-<meta name="description" content="Escucha los lanzamientos oficiales de IVAN PRODUCER.">
-<title>IVAN PRODUCER | Música Oficial</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#050510">
+<meta name="description" content="IVAN PRODUCER ツ - Música electrónica, Lento Violento, Trance y Slow Style.">
+
+<title>IVAN PRODUCER ツ | Official Website</title>
 
 <style>
 * {
@@ -15,177 +17,394 @@
   box-sizing: border-box;
 }
 
+:root {
+  --blue: #00bfff;
+  --purple: #8a2bff;
+  --black: #050510;
+  --white: #ffffff;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   font-family: Arial, sans-serif;
-  background: #050816;
+  background: var(--black);
   color: white;
-  line-height: 1.6;
+  overflow-x: hidden;
 }
+
+/* FONDO */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 20% 20%, #09234b 0%, transparent 35%),
+    radial-gradient(circle at 80% 70%, #280747 0%, transparent 35%),
+    #050510;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: .15;
+  pointer-events: none;
+  background-image:
+    linear-gradient(#ffffff10 1px, transparent 1px),
+    linear-gradient(90deg, #ffffff10 1px, transparent 1px);
+  background-size: 45px 45px;
+}
+
+/* NAVEGACION */
 
 header {
-  text-align: center;
-  padding: 50px 15px;
-  background: linear-gradient(135deg, #050816, #071d46, #050816);
-  border-bottom: 2px solid #087bff;
+  width: 100%;
+  padding: 22px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  background: #050510a8;
+  backdrop-filter: blur(12px);
 }
 
-header h1 {
-  font-size: clamp(2rem, 7vw, 4rem);
-  letter-spacing: 4px;
-  text-shadow: 0 0 15px #008cff, 0 0 35px #006aff;
+.logo {
+  color: white;
+  font-size: 21px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-shadow: 0 0 15px var(--blue);
 }
 
-header p {
-  color: #55baff;
-  letter-spacing: 4px;
-  margin-top: 8px;
+.logo span {
+  color: var(--blue);
 }
 
 nav {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   gap: 25px;
-  padding: 18px;
-  background: #080d20;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
+  font-size: 13px;
+  transition: .3s;
 }
 
 nav a:hover {
-  color: #00aaff;
+  color: var(--blue);
+  text-shadow: 0 0 12px var(--blue);
 }
 
+/* PORTADA PRINCIPAL */
+
 .hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 65px 20px;
-  background: radial-gradient(circle, #102750, #050816 70%);
+  padding: 120px 20px 70px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  z-index: 2;
+  animation: aparecer 1.5s ease;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1 {
+  font-size: clamp(42px, 9vw, 95px);
+  font-weight: 900;
+  letter-spacing: 5px;
+  line-height: 1.15;
+  color: white;
+  text-shadow:
+    0 0 10px var(--blue),
+    0 0 25px var(--blue),
+    0 0 60px #006eff;
+  animation: brillo 3s infinite alternate;
+}
+
+@keyframes brillo {
+  from {
+    text-shadow: 0 0 10px var(--blue);
+  }
+  to {
+    text-shadow:
+      0 0 20px var(--blue),
+      0 0 50px var(--purple);
+  }
 }
 
 .hero h2 {
-  color: #16aaff;
-  font-size: clamp(1.7rem, 5vw, 2.8rem);
+  color: var(--blue);
+  letter-spacing: 8px;
+  font-size: clamp(15px, 3vw, 27px);
+  margin-top: 15px;
 }
 
 .hero p {
-  max-width: 650px;
-  margin: 15px auto;
-  color: #c5d4ee;
+  color: #b8c7df;
+  margin: 25px 0;
+  letter-spacing: 3px;
+  font-size: 12px;
 }
 
-.section {
-  max-width: 1050px;
-  margin: auto;
-  padding: 40px 20px;
+/* CIRCULO LUMINOSO */
+
+.orb {
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  border: 2px solid #00bfff80;
+  box-shadow:
+    0 0 25px var(--blue),
+    inset 0 0 35px var(--blue);
+  position: absolute;
+  animation: girar 15s linear infinite;
+  opacity: .45;
 }
 
-.section h2 {
-  color: #28aaff;
-  text-align: center;
-  margin-bottom: 25px;
+.orb::before,
+.orb::after {
+  content: "";
+  position: absolute;
+  inset: -25px;
+  border: 1px solid var(--purple);
+  border-radius: 50%;
+  transform: rotateX(65deg);
 }
 
-.search {
-  width: 100%;
-  padding: 14px;
-  border-radius: 10px;
-  border: 1px solid #168cff;
-  background: #0c1429;
+.orb::after {
+  transform: rotateY(65deg);
+}
+
+@keyframes girar {
+  to { transform: rotate(360deg); }
+}
+
+/* BOTONES */
+
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border: 1px solid var(--blue);
   color: white;
-  margin-bottom: 25px;
-  font-size: 16px;
+  text-decoration: none;
+  border-radius: 30px;
+  margin: 8px;
+  background: #00bfff18;
+  box-shadow: 0 0 15px #00bfff55;
+  transition: .3s;
+  font-size: 13px;
+  cursor: pointer;
 }
 
-.song {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  background: #0c1429;
-  border: 1px solid #123d70;
-  border-radius: 15px;
+.btn:hover {
+  background: var(--blue);
+  color: black;
+  box-shadow: 0 0 30px var(--blue);
+  transform: translateY(-4px);
+}
+
+/* SECCIONES */
+
+section {
+  padding: 90px 8%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  color: white;
+  text-shadow: 0 0 15px var(--blue);
+}
+
+.section-title p {
+  color: #8c9ab2;
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+/* TARJETAS */
+
+.music-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.music-card {
+  background: linear-gradient(145deg, #101b32, #090914);
+  border: 1px solid #00bfff35;
   padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 18px #0066aa22;
+  border-radius: 18px;
+  transition: .4s;
+  text-align: center;
+  box-shadow: 0 10px 30px #0008;
 }
 
-.song img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
+.music-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: var(--blue);
+  box-shadow: 0 0 25px #00bfff55;
+}
+
+/* PORTADA MUSICAL */
+
+.cover {
+  width: 100%;
+  aspect-ratio: 1;
   border-radius: 12px;
-  border: 1px solid #168cff;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle, #087cb5, #11132e 55%, #03030a);
+  box-shadow: inset 0 0 40px #00bfff55;
 }
 
-.song-info {
-  flex: 1;
-  min-width: 200px;
+.cover strong {
+  font-size: clamp(22px, 5vw, 30px);
+  text-shadow: 0 0 15px var(--blue);
 }
 
-.song-info h3 {
-  font-size: 1.3rem;
+.cover small {
+  margin-top: 10px;
+  color: #b4eaff;
+  letter-spacing: 3px;
 }
 
-.song-info p {
-  color: #80bde8;
-  margin: 8px 0;
+.music-card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
 }
+
+.music-card p {
+  color: #91a1ba;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+/* REPRODUCTOR */
 
 audio {
   width: 100%;
-  margin: 10px 0;
+  height: 40px;
+  margin-top: 10px;
+  filter: saturate(1.4);
 }
 
-.download {
-  display: inline-block;
-  background: #087bff;
-  color: white;
-  padding: 10px 17px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-top: 8px;
-}
-
-.download:hover {
-  background: #00aaff;
-}
-
-.empty {
-  text-align: center;
-  color: #91a8c5;
-  padding: 25px;
-}
+/* SOBRE MI */
 
 .about {
   text-align: center;
-  color: #c5d4ee;
+  max-width: 750px;
+  margin: auto;
+  line-height: 1.9;
+  color: #b9c6da;
 }
+
+.about h2 {
+  color: var(--blue);
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+/* REDES */
+
+.social {
+  text-align: center;
+}
+
+.social a {
+  color: var(--blue);
+  text-decoration: none;
+  margin: 10px;
+  display: inline-block;
+  padding: 12px 20px;
+  border: 1px solid #00bfff55;
+  border-radius: 30px;
+  transition: .3s;
+}
+
+.social a:hover {
+  background: var(--blue);
+  color: black;
+}
+
+/* FOOTER */
 
 footer {
-  text-align: center;
   padding: 30px 15px;
-  background: #080d20;
-  color: #91a8c5;
-  margin-top: 40px;
+  text-align: center;
+  border-top: 1px solid #00bfff35;
+  color: #7e8ca6;
+  font-size: 12px;
 }
 
-@media(max-width: 600px) {
-  .song {
+footer strong {
+  color: var(--blue);
+}
+
+/* MOVIL */
+
+@media(max-width: 650px) {
+  header {
+    padding: 18px 5%;
     flex-direction: column;
-    text-align: center;
+    gap: 18px;
   }
 
-  .song img {
-    width: 190px;
-    height: 190px;
+  nav {
+    gap: 13px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 11px;
+  }
+
+  .orb {
+    width: 210px;
+    height: 210px;
+  }
+
+  section {
+    padding: 65px 6%;
   }
 }
 </style>
@@ -193,158 +412,175 @@ footer {
 
 <body>
 
+<!-- NAVEGACION -->
+
 <header>
-  <h1>IVAN PRODUCER</h1>
-  <p>LA MENTE MAESTRA</p>
+  <div class="logo">IVAN <span>PRODUCER ツ</span></div>
+
+  <nav>
+    <a href="#inicio">INICIO</a>
+    <a href="#musica">MÚSICA</a>
+    <a href="#sobre">SOBRE MÍ</a>
+    <a href="#redes">REDES</a>
+  </nav>
 </header>
 
-<nav>
-  <a href="#inicio">Inicio</a>
-  <a href="#musica">Música</a>
-  <a href="#sobre-mi">Sobre mí</a>
-</nav>
+<!-- INICIO -->
+
+<main>
 
 <section class="hero" id="inicio">
-  <h2>BIENVENIDOS A MI MUNDO MUSICAL</h2>
 
-  <p>
-    Música electrónica, Lento Violento, Trance,
-    Slow Style y mucho más.
-    Escucha mis producciones oficiales.
-  </p>
-</section>
+  <div class="orb"></div>
 
-<section class="section" id="musica">
+  <div class="hero-content">
 
-  <h2>LANZAMIENTOS OFICIALES</h2>
+    <h1>IVAN</h1>
+    <h2>PRODUCER ツ</h2>
 
-  <input
-    class="search"
-    id="buscador"
-    type="search"
-    placeholder="Buscar una canción..."
-    aria-label="Buscar música">
+    <p>LA MENTE MAESTRA · OFFICIAL MUSIC</p>
 
-  <div id="lista-musica"></div>
+    <a href="#musica" class="btn">♫ ESCUCHAR MÚSICA</a>
+
+  </div>
 
 </section>
 
-<section class="section" id="sobre-mi">
+<!-- MUSICA -->
 
-  <h2>SOBRE IVAN PRODUCER</h2>
+<section id="musica">
 
-  <p class="about">
-    Productor y DJ independiente.
-    Creando sonidos, mezclas y producciones
-    para todos los amantes de la música electrónica.
+  <div class="section-title">
+    <h2>♫ MI MÚSICA</h2>
+    <p>Disfruta mis producciones musicales.</p>
+  </div>
 
-    <br><br>
+  <div class="music-grid" id="musicGrid">
 
-    <strong>IVAN PRODUCER · LA MENTE MAESTRA</strong>
-  </p>
+    <!-- CANCION 1 -->
+
+    <article class="music-card">
+
+      <div class="cover">
+        <strong>ETERNAL<br>ENERGY</strong>
+        <small>IVAN PRODUCER</small>
+      </div>
+
+      <h3>ETERNAL ENERGY</h3>
+
+      <p>LENTO VIOLENTO · ORIGINAL MIX</p>
+
+      <audio controls preload="none">
+        <source
+          src="ETERNAL ENERGY - LENTO VIOLENTO BY IVAN PRODUCER.mp3"
+          type="audio/mpeg">
+        Tu navegador no soporta audio.
+      </audio>
+
+    </article>
+
+    <!-- AGREGA MAS CANCIONES COPIANDO ESTA TARJETA -->
+
+  </div>
 
 </section>
+
+<!-- SOBRE MI -->
+
+<section id="sobre">
+
+  <div class="about">
+
+    <h2>SOBRE IVAN PRODUCER</h2>
+
+    <p>
+      Bienvenidos al universo musical de IVAN PRODUCER ツ.
+
+      Un espacio dedicado a la música electrónica,
+      Lento Violento, Trance, Slow Style y mucho más.
+
+      Producciones, sonidos y experiencias musicales
+      creadas para disfrutar y compartir.
+    </p>
+
+    <br>
+
+    <h3 style="color:#00bfff">
+      𝐈 𝐕 𝐀 𝐍 PRODUCER ツ
+    </h3>
+
+    <p>LA MENTE MAESTRA</p>
+
+  </div>
+
+</section>
+
+<!-- REDES SOCIALES -->
+
+<section id="redes">
+
+  <div class="section-title">
+    <h2>ENCUÉNTRAME</h2>
+    <p>Sigue mis novedades y producciones.</p>
+  </div>
+
+  <div class="social">
+
+    <!-- REEMPLAZA LOS ENLACES CON TUS REDES -->
+
+    <a href="https://www.youtube.com/"
+       target="_blank" rel="noopener noreferrer">
+       YouTube
+    </a>
+
+    <a href="https://www.facebook.com/"
+       target="_blank" rel="noopener noreferrer">
+       Facebook
+    </a>
+
+    <a href="https://www.instagram.com/"
+       target="_blank" rel="noopener noreferrer">
+       Instagram
+    </a>
+
+  </div>
+
+</section>
+
+</main>
+
+<!-- PIE DE PAGINA -->
 
 <footer>
-  <p>© 2026 IVAN PRODUCER · Todos los derechos reservados.</p>
-  <p>La Mente Maestra</p>
+
+  <p>
+    © <span id="year"></span>
+    <strong>IVAN PRODUCER ツ</strong>
+  </p>
+
+  <p style="margin-top:10px">
+    ALL RIGHTS RESERVED · OFFICIAL MUSIC WEBSITE
+  </p>
+
 </footer>
 
 <script>
+document.getElementById("year").textContent =
+  new Date().getFullYear();
 
-// CATÁLOGO MUSICAL OFICIAL
+// Un solo reproductor puede sonar a la vez.
 
-const canciones = [
+const players = document.querySelectorAll("audio");
 
-  {
-    titulo: "ETERNAL ENERGY",
-    estilo: "LENTO VIOLENTO",
-    version: "ORIGINAL MIX",
-    archivo: "musica/eternal-energy-lento-violento.mp3",
-    portada: "imagenes/portada-eternal-energy.png"
-  }
-
-  // AGREGA AQUÍ TUS PRÓXIMOS LANZAMIENTOS
-
-];
-
-const lista = document.getElementById("lista-musica");
-const buscador = document.getElementById("buscador");
-
-function mostrarMusica(filtro = "") {
-
-  lista.replaceChildren();
-
-  const resultados = canciones.filter(c =>
-    (c.titulo + " " + c.estilo + " " + c.version)
-    .toLowerCase()
-    .includes(filtro.toLowerCase())
-  );
-
-  if (resultados.length === 0) {
-
-    const mensaje = document.createElement("p");
-    mensaje.className = "empty";
-
-    mensaje.textContent = canciones.length
-      ? "No se encontraron canciones."
-      : "Próximamente nuevos lanzamientos.";
-
-    lista.appendChild(mensaje);
-    return;
-  }
-
-  resultados.forEach(c => {
-
-    const tarjeta = document.createElement("article");
-    tarjeta.className = "song";
-
-    const imagen = document.createElement("img");
-    imagen.src = c.portada;
-    imagen.alt = "Portada de " + c.titulo;
-    imagen.loading = "lazy";
-
-    const info = document.createElement("div");
-    info.className = "song-info";
-
-    const titulo = document.createElement("h3");
-    titulo.textContent = c.titulo;
-
-    const detalle = document.createElement("p");
-    detalle.textContent =
-      "IVAN PRODUCER · " + c.estilo + " · " + c.version;
-
-    const reproductor = document.createElement("audio");
-    reproductor.controls = true;
-    reproductor.preload = "none";
-
-    const fuente = document.createElement("source");
-    fuente.src = c.archivo;
-    fuente.type = "audio/mpeg";
-
-    reproductor.appendChild(fuente);
-
-    const descarga = document.createElement("a");
-    descarga.className = "download";
-    descarga.href = c.archivo;
-    descarga.download = "";
-    descarga.textContent = "Descargar canción";
-
-    info.append(titulo, detalle, reproductor, descarga);
-    tarjeta.append(imagen, info);
-
-    lista.appendChild(tarjeta);
-
+players.forEach(player => {
+  player.addEventListener("play", () => {
+    players.forEach(other => {
+      if (other !== player) {
+        other.pause();
+      }
+    });
   });
-
-}
-
-buscador.addEventListener("input", e => {
-  mostrarMusica(e.target.value);
 });
-
-mostrarMusica();
-
 </script>
 
 </body>
