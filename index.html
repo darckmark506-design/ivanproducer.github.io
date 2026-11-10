@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -245,8 +244,9 @@ section { padding: 90px 8%; }
 }
 
 .cover strong {
-  font-size: 30px;
+  font-size: 26px;
   text-shadow: 0 0 15px #00bfff;
+  padding: 0 10px;
 }
 
 .cover small {
@@ -281,25 +281,6 @@ audio {
 .about h2 {
   color: #00bfff;
   margin-bottom: 20px;
-}
-
-/* REDES */
-
-.social { text-align: center; }
-
-.social a {
-  color: #00bfff;
-  text-decoration: none;
-  margin: 10px;
-  display: inline-block;
-  padding: 12px 20px;
-  border: 1px solid #00bfff55;
-  border-radius: 30px;
-}
-
-.social a:hover {
-  background: #00bfff;
-  color: black;
 }
 
 /* FOOTER */
@@ -350,7 +331,6 @@ footer strong { color: #00bfff; }
     <a href="#inicio">INICIO</a>
     <a href="#musica">MÚSICA</a>
     <a href="#sobre">SOBRE MÍ</a>
-    <a href="#redes">REDES</a>
   </nav>
 </header>
 
@@ -387,25 +367,45 @@ footer strong { color: #00bfff; }
   <div class="music-grid">
 
     <!-- CANCION 1 -->
-
     <article class="music-card">
-
       <div class="cover">
         <strong>ETERNAL<br>ENERGY</strong>
         <small>IVAN PRODUCER</small>
       </div>
-
       <h3>ETERNAL ENERGY</h3>
-
       <p>LENTO VIOLENTO · ORIGINAL MIX</p>
-
       <audio controls preload="none">
-        <source
-          src="ETERNAL ENERGY - LENTO VIOLENTO BY IVAN PRODUCER.mp3"
-          type="audio/mpeg">
+        <source src="ETERNAL ENERGY - LENTO VIOLENTO BY IVAN PRODUCER.mp3" type="audio/mpeg">
         Tu navegador no soporta audio.
       </audio>
+    </article>
 
+    <!-- CANCION 2 (Reserva para actualizar) -->
+    <article class="music-card">
+      <div class="cover">
+        <strong>NUEVA<br>CANCION 2</strong>
+        <small>IVAN PRODUCER</small>
+      </div>
+      <h3>TÍTULO DE LA CANCIÓN 2</h3>
+      <p>TRANCE / SLOW STYLE · REMIX</p>
+      <audio controls preload="none">
+        <source src="tu-segunda-cancion.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+      </audio>
+    </article>
+
+    <!-- CANCION 3 (Reserva para actualizar) -->
+    <article class="music-card">
+      <div class="cover">
+        <strong>NUEVA<br>CANCION 3</strong>
+        <small>IVAN PRODUCER</small>
+      </div>
+      <h3>TÍTULO DE LA CANCIÓN 3</h3>
+      <p>MÚSICA ELECTRÓNICA · VIP MIX</p>
+      <audio controls preload="none">
+        <source src="tu-tercera-cancion.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+      </audio>
     </article>
 
   </div>
@@ -442,36 +442,6 @@ footer strong { color: #00bfff; }
 
 </section>
 
-<!-- REDES -->
-
-<section id="redes">
-
-  <div class="section-title">
-    <h2>ENCUÉNTRAME</h2>
-    <p>Sigue mis novedades y producciones.</p>
-  </div>
-
-  <div class="social">
-
-    <a href="https://www.youtube.com/"
-       target="_blank" rel="noopener noreferrer">
-       YouTube
-    </a>
-
-    <a href="https://www.facebook.com/"
-       target="_blank" rel="noopener noreferrer">
-       Facebook
-    </a>
-
-    <a href="https://www.instagram.com/"
-       target="_blank" rel="noopener noreferrer">
-       Instagram
-    </a>
-
-  </div>
-
-</section>
-
 </main>
 
 <footer>
@@ -486,11 +456,9 @@ footer strong { color: #00bfff; }
 </footer>
 
 <script>
-document.getElementById("year").textContent =
-  new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 
 // Evita reproducir dos canciones al mismo tiempo.
-
 const players = document.querySelectorAll("audio");
 
 players.forEach(player => {
