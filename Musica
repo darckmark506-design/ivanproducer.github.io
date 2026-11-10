@@ -1,1 +1,13 @@
+<article class="music-card">
+  <div class="cover">
+    <strong>RISE AGAIN</strong>
+    <small>IVAN PRODUCER</small>
+  </div>
 
+  <h3>RISE AGAIN</h3>
+  <p>ELECTRONIC MUSIC</p>
+
+  <audio controls preload="none">
+    <source src="RISE AGAIN.mp3" type="audio/mpeg">
+  </audio>
+</article>
