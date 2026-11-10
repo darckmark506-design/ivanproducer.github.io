@@ -1,239 +1,63 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#050816">
-  <title>IVAN PRODUCER | Música Oficial</title>
-  <meta name="description" content="Escucha los lanzamientos y remixes oficiales de IVAN PRODUCER.">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #050816;
-      color: white;
-      line-height: 1.6;
-    }
-
-    header {
-      text-align: center;
-      padding: 55px 20px;
-      background: linear-gradient(135deg, #050816, #071d46, #050816);
-      border-bottom: 1px solid #087bff;
-    }
-
-    header h1 {
-      font-size: clamp(2.2rem, 7vw, 4rem);
-      letter-spacing: 4px;
-      color: #fff;
-      text-shadow: 0 0 12px #008cff, 0 0 30px #006aff;
-    }
-
-    header p {
-      color: #7dcaff;
-      letter-spacing: 3px;
-      margin-top: 10px;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 25px;
-      padding: 18px;
-      background: #080d20;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: #00aaff;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 65px 20px;
-    }
-
-    .hero h2 {
-      font-size: clamp(1.8rem, 5vw, 2.8rem);
-      color: #16aaff;
-      text-shadow: 0 0 15px #007bff;
-    }
-
-    .hero p {
-      max-width: 600px;
-      margin: 15px auto;
-      color: #c5d4ee;
-    }
-
-    .section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 35px 20px;
-    }
-
-    .section h2 {
-      color: #28aaff;
-      margin-bottom: 25px;
-      text-align: center;
-    }
-
-    .song {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      background: #0c1429;
-      border: 1px solid #123d70;
-      border-radius: 15px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 15px #0066aa22;
-    }
-
-    .song img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 10px;
-      border: 1px solid #168cff;
-    }
-
-    .song-info {
-      flex: 1;
-      min-width: 220px;
-    }
-
-    .song-info h3 {
-      color: #fff;
-      font-size: 1.3rem;
-    }
-
-    .song-info p {
-      color: #80bde8;
-      margin-bottom: 12px;
-    }
-
-    audio {
-      width: 100%;
-      max-width: 500px;
-      margin: 8px 0;
-    }
-
-    .download {
-      display: inline-block;
-      background: #087bff;
-      color: white;
-      padding: 10px 18px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 8px;
-    }
-
-    .download:hover {
-      background: #00aaff;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 15px;
-      background: #080d20;
-      color: #91a8c5;
-      margin-top: 40px;
-    }
-
-    @media (max-width: 600px) {
-      .song {
-        justify-content: center;
-        text-align: center;
-      }
-
-      .song img {
-        width: 160px;
-        height: 160px;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Música, remixes, álbumes y lanzamientos de IVAN PRODUCER.">
+<title>IVAN PRODUCER — Música oficial</title>
+<style>
+:root{--bg:#05070d;--panel:#0b1220;--cyan:#27e8ff;--violet:#9d4dff;--white:#f4f7ff;--muted:#9ba8bd}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 75% 0%,#17234a 0,transparent 38%),radial-gradient(ellipse at 10% 35%,#21103c 0,transparent 32%),var(--bg);color:var(--white);font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:5;background:#05070ddd;backdrop-filter:blur(14px);border-bottom:1px solid #26334c}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-weight:900;letter-spacing:.13em;font-size:19px;text-shadow:0 0 18px #27e8ff88}.brand span{color:var(--cyan)}
+nav{display:flex;gap:22px;color:#c6d1e5;font-size:13px}nav a:hover{color:var(--cyan)}
+.hero{min-height:610px;display:grid;place-items:center;text-align:center;padding:90px 0 80px;position:relative;overflow:hidden}
+.orbit{position:absolute;width:440px;height:440px;border:1px solid #27e8ff33;border-radius:50%;box-shadow:0 0 80px #784dff22,inset 0 0 70px #27e8ff12;animation:spin 28s linear infinite}
+.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid #9d4dff66;border-radius:50%;inset:35px;transform:rotateX(68deg)}.orbit:after{inset:75px;transform:rotateY(68deg)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-content{position:relative;z-index:1}.eyebrow{color:var(--cyan);letter-spacing:.32em;font-size:11px;font-weight:bold}
+h1{font-size:clamp(42px,8vw,92px);line-height:.98;margin:20px 0 16px;letter-spacing:.04em;text-shadow:0 0 18px #27e8ff66,0 0 50px #9d4dff55}
+h1 em{font-style:normal;color:transparent;-webkit-text-stroke:1px var(--cyan)}
+.hero p{color:#c0cbe0;max-width:590px;margin:0 auto 30px;line-height:1.7}
+.btn{display:inline-block;padding:14px 23px;border-radius:4px;font-weight:bold;font-size:12px;letter-spacing:.12em;background:linear-gradient(100deg,var(--cyan),#7a66ff);color:#05070d;box-shadow:0 0 28px #27e8ff44}
+.btn.secondary{background:transparent;border:1px solid #27e8ff88;color:var(--white);box-shadow:none;margin-left:9px}
+section{padding:74px 0}.section-kicker{font-size:10px;color:var(--cyan);letter-spacing:.3em;font-weight:bold}.section-title{font-size:clamp(27px,4vw,42px);margin:12px 0 30px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:linear-gradient(145deg,#111c30dd,#080d18);border:1px solid #273651;border-radius:10px;overflow:hidden;transition:.25s}.card:hover{transform:translateY(-5px);border-color:var(--cyan);box-shadow:0 12px 40px #27e8ff18}
+.cover{aspect-ratio:1.15;background:radial-gradient(circle at 50% 40%,#245b83,#171344 45%,#070b15 78%);display:grid;place-items:center;position:relative;overflow:hidden}.cover:before{content:"";position:absolute;width:70%;aspect-ratio:1;border:1px solid #27e8ff88;border-radius:50%;box-shadow:0 0 35px #27e8ff55,inset 0 0 35px #9d4dff44}.cover strong{z-index:1;text-align:center;font-size:21px;letter-spacing:.12em;text-shadow:0 0 18px var(--cyan)}.card-body{padding:18px}.card h3{margin:0 0 7px;font-size:17px}.muted{color:var(--muted);font-size:13px;line-height:1.6}.tag{display:inline-block;color:var(--cyan);font-size:10px;letter-spacing:.16em;margin-bottom:10px}
+.player{display:flex;align-items:center;gap:15px;padding:17px;background:#0b1424;border:1px solid #293a56;border-radius:9px;margin-top:14px}.play{width:42px;height:42px;border:0;border-radius:50%;background:var(--cyan);font-size:16px;cursor:pointer}.track{flex:1}.track b{display:block;font-size:13px}.track small{color:var(--muted)}audio{width:100%;margin-top:10px;height:34px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.visual{min-height:300px;border:1px solid #2b4665;border-radius:12px;background:radial-gradient(circle at 50% 50%,#1a4770,#10102d 48%,#070a12 75%);display:grid;place-items:center;text-align:center;box-shadow:0 0 65px #27e8ff16}.visual b{font-size:clamp(28px,5vw,48px);letter-spacing:.13em;text-shadow:0 0 24px var(--cyan)}
+.socials{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.socials a{padding:12px 16px;border:1px solid #33445f;border-radius:5px;font-size:12px}.socials a:hover{border-color:var(--cyan);color:var(--cyan)}
+footer{border-top:1px solid #26334c;padding:28px 0;color:var(--muted);font-size:12px}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:760px){nav{gap:12px;font-size:11px}.grid{grid-template-columns:1fr}.about{grid-template-columns:1fr}.hero{min-height:560px}.orbit{width:300px;height:300px}.btn.secondary{margin:10px 0 0}.nav{height:auto;min-height:68px;flex-wrap:wrap;padding:12px 0}.brand{font-size:16px}}
+</style>
 </head>
-
 <body>
+<header><div class="wrap nav"><a class="brand" href="#">IVAN <span>PRODUCER</span> ツ</a><nav><a href="#musica">MÚSICA</a><a href="#remixes">REMIXES</a><a href="#albumes">ÁLBUMES</a><a href="#videos">VIDEOS</a><a href="#sobre">SOBRE MÍ</a></nav></div></header>
+<main>
+<section class="hero"><div class="orbit"></div><div class="hero-content wrap"><div class="eyebrow">MÚSICA • ENERGÍA • EMOCIÓN</div><h1>IVAN <em>PRODUCER</em></h1><p>Bienvenido a mi universo musical. Descubrí mis canciones, remixes, álbumes y nuevos lanzamientos. La música es mi pasión.</p><a class="btn" href="#musica">ESCUCHAR MÚSICA</a><a class="btn secondary" href="#sobre">CONOCERME</a></div></section>
+<section id="musica"><div class="wrap"><div class="section-kicker">ÚLTIMOS LANZAMIENTOS</div><h2 class="section-title">Mi música</h2><div class="grid">
+<article class="card"><div class="cover"><strong>NEW<br>RELEASE</strong></div><div class="card-body"><span class="tag">LANZAMIENTO</span><h3>Nombre de tu canción</h3><p class="muted">Agregá aquí una breve descripción de tu tema.</p><audio controls><source src="audio/tema-1.mp3" type="audio/mpeg">Tu navegador no puede reproducir audio.</audio></div></article>
+<article class="card"><div class="cover"><strong>IVAN<br>PRODUCER</strong></div><div class="card-body"><span class="tag">SINGLE</span><h3>Tu próximo lanzamiento</h3><p class="muted">Reemplazá este texto por los detalles de tu canción.</p></div></article>
+<article class="card"><div class="cover"><strong>MUSIC<br>WORLD</strong></div><div class="card-body"><span class="tag">DESTACADO</span><h3>Tu canción destacada</h3><p class="muted">Sumá tus novedades y compartilas con el mundo.</p></div></article>
+</div></div></section>
+<section id="remixes"><div class="wrap"><div class="section-kicker">NUEVAS VERSIONES</div><h2 class="section-title">Remixes</h2><div class="grid">
+<article class="card"><div class="cover"><strong>REMIX<br>01</strong></div><div class="card-body"><span class="tag">REMIX</span><h3>Nombre del remix</h3><p class="muted">Artista original · Tu versión</p></div></article>
+<article class="card"><div class="cover"><strong>REMIX<br>02</strong></div><div class="card-body"><span class="tag">REMIX</span><h3>Otro remix</h3><p class="muted">Artista original · Tu versión</p></div></article>
+<article class="card"><div class="cover"><strong>DJ SET</strong></div><div class="card-body"><span class="tag">DJ SET</span><h3>Sesión especial</h3><p class="muted">Tu selección musical para escuchar y bailar.</p></div></article>
+</div></div></section>
+<section id="albumes"><div class="wrap"><div class="section-kicker">COLECCIONES</div><h2 class="section-title">Álbumes</h2><div class="grid"><article class="card"><div class="cover"><strong>ALBUM<br>ARTWORK</strong></div><div class="card-body"><span class="tag">ÁLBUM</span><h3>Nombre del álbum</h3><p class="muted">Año · Cantidad de canciones</p></div></article><article class="card"><div class="cover"><strong>EP<br>COLLECTION</strong></div><div class="card-body"><span class="tag">EP</span><h3>Nombre del EP</h3><p class="muted">Año · Lista de temas</p></div></article></div></div></section>
 
-  <header>
-    <h1>IVAN PRODUCER</h1>
-    <p>LA MENTE MAESTRA</p>
-  </header>
+<section id="videos"><div class="wrap"><div class="section-kicker">EN YOUTUBE</div><h2 class="section-title">Mis videos</h2>
+<div class="card" style="padding:14px">
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;background:#05070d">
+<iframe src="https://www.youtube-nocookie.com/embed/ThsE_fqlyGM" title="Video de IVAN PRODUCER en YouTube" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+<div class="card-body"><span class="tag">VIDEO DESTACADO</span><h3>IVAN PRODUCER — Video de YouTube</h3><p class="muted">Reproducí este video directamente desde la página oficial.</p><a class="btn" href="https://youtu.be/ThsE_fqlyGM" target="_blank" rel="noopener">VER EN YOUTUBE</a></div>
+</div></div></section>
 
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#musica">Música</a>
-    <a href="#sobre-mi">Sobre mí</a>
-  </nav>
-
-  <section class="hero" id="inicio">
-    <h2>BIENVENIDOS A MI MUNDO MUSICAL</h2>
-    <p>
-      Música electrónica, Lento Violento, Trance,
-      Slow Style y mucho más.
-      Siente la energía de cada producción.
-    </p>
-  </section>
-
-  <section class="section" id="musica">
-    <h2>ÚLTIMOS LANZAMIENTOS</h2>
-
-    <!-- CANCIÓN 1 -->
-    <div class="song">
-      <img src="imagenes/portada-rise-again.png"
-           alt="Portada de Rise Again">
-
-      <div class="song-info">
-        <h3>RISE AGAIN</h3>
-        <p>IVAN PRODUCER · ORIGINAL MIX</p>
-
-        <audio controls preload="none">
-          <source src="musica/rise-again.mp3" type="audio/mpeg">
-          Tu navegador no puede reproducir este audio.
-        </audio>
-
-        <br>
-
-        <a class="download"
-           href="musica/rise-again.mp3"
-           download="RISE-AGAIN-IVAN-PRODUCER.mp3">
-          Descargar canción
-        </a>
-      </div>
-    </div>
-
-    <!-- COPIA ESTE BLOQUE PARA AGREGAR OTRA CANCIÓN -->
-
-  </section>
-
-  <section class="section" id="sobre-mi">
-    <h2>SOBRE IVAN PRODUCER</h2>
-    <p style="text-align:center; color:#c5d4ee;">
-      Productor y DJ. Creando música y compartiendo
-      sonidos para todos los amantes de la música electrónica.
-    </p>
-  </section>
-
-  <footer>
-    <p>© 2026 IVAN PRODUCER · Todos los derechos reservados.</p>
-    <p>La Mente Maestra</p>
-  </footer>
-
-</body>
-</html>
+<section id="sobre"><div class="wrap about"><div><div class="section-kicker">DETRÁS DEL SONIDO</div><h2 class="section-title">La música es mi pasión.</h2><p class="muted">Soy IVAN PRODUCER. Este espacio reúne mis producciones, remixes y proyectos musicales. Mi objetivo es compartir mi sonido con Argentina y todo el mundo.</p><div class="socials"><a href="#" target="_blank" rel="noopener">YouTube</a><a href="#" target="_blank" rel="noopener">Facebook</a><a href="#" target="_blank" rel="noopener">Instagram</a></div></div><div class="visual"><b>IVAN<br>PRODUCER ツ</b></div></div></section>
+</main>
+<footer><div class="wrap foot"><span>© <span id="year"></span> IVAN PRODUCER. Todos los derechos reservados.</span><span>Hecho para compartir música con el mundo.</span></div></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body></html>
